@@ -22,7 +22,7 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
 
       <section className="band band--tight">
         <div className="container">
-          <article className="release-entry">
+          <article className="release-entry" data-reveal="">
             <div>
               <div className="release-version">v1.0.1</div>
               <div className="release-date">2026-11-23</div>
@@ -39,7 +39,7 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
             </div>
           </article>
 
-          <article className="release-entry">
+          <article className="release-entry" data-reveal="" data-reveal-delay="1">
             <div>
               <div className="release-version">v1.0.0</div>
               <div className="release-date">2026-11-22</div>
@@ -55,7 +55,7 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
             </div>
           </article>
 
-          <article className="release-entry">
+          <article className="release-entry" data-reveal="" data-reveal-delay="2">
             <div>
               <div className="release-version">v1.1 – v1.3</div>
               <div className="release-date">Planned roadmap</div>

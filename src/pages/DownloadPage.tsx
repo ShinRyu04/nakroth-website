@@ -129,7 +129,7 @@ export function DownloadPage({ locale, manifest }: DownloadPageProps) {
             />
           </div>
 
-          <div className="download-list">
+          <div key={selectedOs} className="download-list mode-stage-swap">
             {activeRows.map((row) => (
               <div key={row.filename} className="download-row">
                 <div>

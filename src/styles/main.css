@@ -236,12 +236,10 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-      95deg,
+  background: linear-gradient(95deg,
       var(--bg-scrim-solid) 0%,
       var(--bg-scrim-top) 48%,
-      var(--bg-scrim-mid) 100%
-    ),
+      var(--bg-scrim-mid) 100%),
     linear-gradient(180deg, transparent 58%, var(--bg-void) 100%);
 }
 
@@ -1079,18 +1077,21 @@
   .docs-shell {
     grid-template-columns: 224px minmax(0, 1fr);
   }
+
   .docs-toc {
     display: none;
   }
 }
 
 @media (max-width: 900px) {
+
   .mode-stage-grid,
   .bench-layout,
   .studios-columns,
   .release-entry {
     grid-template-columns: minmax(0, 1fr);
   }
+
   .download-row {
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
@@ -1098,25 +1099,31 @@
 }
 
 @media (max-width: 760px) {
+
   .nav-links,
   .nav-actions .btn-primary {
     display: none;
   }
+
   .menu-toggle {
     display: inline-flex;
   }
+
   .hero-stage {
     min-height: auto;
     max-height: none;
   }
+
   .hero-backdrop-img {
     opacity: 0.36;
     object-position: 62% 20%;
   }
+
   .docs-shell {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-5);
   }
+
   .docs-sidebar {
     position: static;
     max-height: none;
@@ -1125,29 +1132,37 @@
     padding-right: 0;
     padding-bottom: var(--space-4);
   }
+
   .docs-mobile-toggle {
     display: flex;
   }
+
   .docs-sidebar-body {
     display: none;
     padding-top: var(--space-4);
   }
+
   .docs-sidebar-body.is-open {
     display: block;
   }
+
   .cmd-box {
     align-items: flex-start;
   }
+
   .cmd-text {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
   }
+
   .data-table {
     min-width: 0;
   }
+
   .data-table thead {
     display: none;
   }
+
   .data-table tbody tr {
     display: flex;
     flex-wrap: wrap;
@@ -1156,14 +1171,143 @@
     padding-block: var(--space-4);
     border-bottom: 1px solid var(--border-hairline);
   }
+
   .data-table td {
     padding: 0;
     border-bottom: 0;
   }
+
   .data-table td:last-child {
     flex-basis: 100%;
   }
+
   .band {
     padding-block: var(--space-7);
   }
+}
+
+/* ============================================================================
+   Motion Layer (GPU-composited transform & opacity only; zero layout shift)
+   ============================================================================ */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--accent-primary);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.page-stage {
+  animation: page-enter var(--dur-med) var(--ease-out-expo) both;
+}
+
+@keyframes hero-backdrop-settle {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-backdrop-img {
+  animation: hero-backdrop-settle 900ms var(--ease-out-expo) both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-enter {
+  animation: rise-in var(--dur-slow) var(--ease-out-expo) both;
+  animation-delay: calc(var(--stagger, 0) * 65ms);
+}
+
+@keyframes mode-swap {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes frame-settle {
+  from {
+    transform: scale(1.018);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.mode-stage-swap {
+  animation: mode-swap 320ms var(--ease-out-expo) both;
+}
+
+.mode-stage-swap .product-frame img {
+  animation: frame-settle 420ms var(--ease-out-expo) both;
+}
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-out-expo);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.js [data-reveal-delay='1'] {
+  transition-delay: 70ms;
+}
+
+.js [data-reveal-delay='2'] {
+  transition-delay: 140ms;
+}
+
+.js [data-reveal-delay='3'] {
+  transition-delay: 210ms;
+}
+
+.bench-table tbody tr,
+.data-table tbody tr,
+.download-row {
+  transition: background-color var(--dur-fast) var(--ease-out-expo);
+}
+
+.bench-table tbody tr:hover,
+.data-table tbody tr:hover {
+  background-color: var(--bg-surface);
+}
+
+.band--surface .bench-table tbody tr:hover {
+  background-color: var(--bg-elevated);
 }

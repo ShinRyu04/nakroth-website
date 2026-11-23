@@ -1,7 +1,8 @@
-import { useState, type ReactNode } from 'react';
+import { useRef, useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { UI_COPY, type Locale } from '../data/i18n';
 import { assetUrl, type ReleaseManifest } from '../data/release';
+import { useScrollProgress, useScrollReveal } from '../hooks/useMotion';
 import { CloseIcon, DownloadIcon, MenuIcon } from './Icons';
 
 interface LayoutProps {
@@ -13,8 +14,12 @@ interface LayoutProps {
 
 export function Layout({ locale, onLocaleChange, manifest, children }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const progressRef = useRef<HTMLDivElement | null>(null);
   const { pathname } = useLocation();
   const t = UI_COPY[locale];
+
+  useScrollReveal(pathname);
+  useScrollProgress(progressRef, pathname);
 
   const isDocs = pathname.startsWith('/docs');
   const isDownload = pathname.startsWith('/download');
@@ -106,9 +111,14 @@ export function Layout({ locale, onLocaleChange, manifest, children }: LayoutPro
             {t.nav.github}
           </a>
         </nav>
+        <div className="scroll-progress" ref={progressRef} aria-hidden="true" />
       </header>
 
-      <main className="site-main">{children}</main>
+      <main className="site-main">
+        <div key={pathname} className="page-stage">
+          {children}
+        </div>
+      </main>
 
       <footer className="site-footer">
         <div className="container footer-inner">

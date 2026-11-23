@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { CopyCommand } from '../components/CopyCommand';
 import { BookIcon, DownloadIcon } from '../components/Icons';
@@ -20,6 +20,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
   const t = UI_COPY[locale];
   const [activeMode, setActiveMode] = useState(0);
   const backdropRef = useRef<HTMLDivElement | null>(null);
+  const heroContentRef = useRef<HTMLDivElement | null>(null);
   const os = detectUserOs();
   const primaryAsset = primaryAssetForOs(manifest, os);
   const currentMode = t.modes.items[activeMode];
@@ -34,10 +35,17 @@ export function HomePage({ locale, manifest }: HomePageProps) {
       if (raf) return;
       raf = window.requestAnimationFrame(() => {
         raf = 0;
-        const el = backdropRef.current;
-        if (!el) return;
         const y = Math.min(window.scrollY, 720);
-        el.style.transform = `translate3d(0, ${(y * 0.14).toFixed(1)}px, 0) scale(${(1 + y * 0.00012).toFixed(4)})`;
+        const bg = backdropRef.current;
+        if (bg) {
+          bg.style.transform = `translate3d(0, ${(y * 0.16).toFixed(1)}px, 0) scale(${(1 + y * 0.00014).toFixed(4)})`;
+        }
+        const content = heroContentRef.current;
+        if (content) {
+          const progress = Math.min(1, y / 520);
+          content.style.transform = `translate3d(0, ${(y * -0.05).toFixed(1)}px, 0)`;
+          content.style.opacity = (1 - progress * 0.35).toFixed(3);
+        }
       });
     };
 
@@ -63,13 +71,15 @@ export function HomePage({ locale, manifest }: HomePageProps) {
         <div className="hero-scrim" aria-hidden="true" />
 
         <div className="container">
-          <div className="hero-content">
-            <h1 id="hero-heading" className="hero-title">
+          <div className="hero-content" ref={heroContentRef}>
+            <h1 id="hero-heading" className="hero-title hero-enter" style={{ '--stagger': 0 } as CSSProperties}>
               {t.hero.title}
             </h1>
-            <p className="hero-lead">{t.hero.lead}</p>
+            <p className="hero-lead hero-enter" style={{ '--stagger': 1 } as CSSProperties}>
+              {t.hero.lead}
+            </p>
 
-            <div className="hero-actions">
+            <div className="hero-actions hero-enter" style={{ '--stagger': 2 } as CSSProperties}>
               <a href={primaryAsset.url} className="btn-primary">
                 <DownloadIcon />
                 <span>{t.hero.downloadFor[os]}</span>
@@ -80,7 +90,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
               </Link>
             </div>
 
-            <div className="hero-command-wrap">
+            <div className="hero-command-wrap hero-enter" style={{ '--stagger': 3 } as CSSProperties}>
               <CopyCommand
                 command={INSTALL_COMMANDS[os]}
                 copyLabel={t.hero.copy}
@@ -88,7 +98,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
               />
             </div>
 
-            <div className="hero-meta-row">
+            <div className="hero-meta-row hero-enter" style={{ '--stagger': 4 } as CSSProperties}>
               <span>{manifest.tag}</span>
               <span>{primaryAsset.size_mb.toFixed(1)} MB</span>
               <Link to="/download">{t.hero.allPlatforms}</Link>
@@ -99,14 +109,14 @@ export function HomePage({ locale, manifest }: HomePageProps) {
 
       <section className="band" aria-labelledby="modes-heading">
         <div className="container">
-          <div className="section-head">
+          <div className="section-head" data-reveal="">
             <h2 id="modes-heading" className="section-title">
               {t.modes.title}
             </h2>
             <p className="section-desc">{t.modes.desc}</p>
           </div>
 
-          <div className="workbench-switcher">
+          <div className="workbench-switcher" data-reveal="" data-reveal-delay="1">
             <div className="mode-tabs" role="tablist" aria-label="Nakroth workspace modes">
               {t.modes.items.map((item, idx) => (
                 <button
@@ -126,7 +136,8 @@ export function HomePage({ locale, manifest }: HomePageProps) {
             </div>
 
             <div
-              className="mode-stage-grid"
+              key={currentMode.id}
+              className="mode-stage-grid mode-stage-swap"
               role="tabpanel"
               id={`panel-${currentMode.id}`}
               aria-labelledby={`tab-${currentMode.id}`}
@@ -160,7 +171,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
       <section className="band band--surface" aria-labelledby="bench-heading">
         <div className="container">
           <div className="bench-layout">
-            <div>
+            <div data-reveal="">
               <h2 id="bench-heading" className="section-title">
                 {t.bench.title}
               </h2>
@@ -168,7 +179,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
               <p className="bench-caption">{t.bench.caption}</p>
             </div>
 
-            <div>
+            <div data-reveal="" data-reveal-delay="1">
               <table className="bench-table">
                 <thead>
                   <tr>
@@ -192,14 +203,14 @@ export function HomePage({ locale, manifest }: HomePageProps) {
 
       <section className="band" aria-labelledby="agents-heading">
         <div className="container">
-          <div className="section-head">
+          <div className="section-head" data-reveal="">
             <h2 id="agents-heading" className="section-title">
               {t.agents.title}
             </h2>
             <p className="section-desc">{t.agents.desc}</p>
           </div>
 
-          <div className="agent-table-wrap">
+          <div className="agent-table-wrap" data-reveal="" data-reveal-delay="1">
             <table className="data-table">
               <thead>
                 <tr>
@@ -226,7 +237,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
 
       <section className="band band--surface" aria-labelledby="studios-heading">
         <div className="container">
-          <div className="section-head">
+          <div className="section-head" data-reveal="">
             <h2 id="studios-heading" className="section-title">
               {t.studios.title}
             </h2>
@@ -234,8 +245,8 @@ export function HomePage({ locale, manifest }: HomePageProps) {
           </div>
 
           <div className="studios-columns">
-            {STUDIO_GROUPS.map((grp) => (
-              <div key={grp.title} className="studio-group">
+            {STUDIO_GROUPS.map((grp, idx) => (
+              <div key={grp.title} className="studio-group" data-reveal="" data-reveal-delay={String(idx)}>
                 <h3>{grp.title}</h3>
                 <ul>
                   {grp.items.map((item) => (
@@ -249,7 +260,7 @@ export function HomePage({ locale, manifest }: HomePageProps) {
       </section>
 
       <section className="band band--tight" aria-labelledby="closing-heading">
-        <div className="container closing-cta">
+        <div className="container closing-cta" data-reveal="">
           <div className="closing-cta-copy">
             <h2 id="closing-heading" className="section-title">
               {t.closing.title}

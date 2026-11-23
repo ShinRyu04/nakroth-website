@@ -60,6 +60,7 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 150ms;
   --dur-med: 260ms;
+  --dur-slow: 560ms;
 }
 
 *,
@@ -144,6 +145,10 @@ kbd {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
   *,
   *::before,
