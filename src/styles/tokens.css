@@ -1,0 +1,155 @@
+/* Hallmark · v2.0.0 · genre: atmospheric · theme: abyssal-obsidian (custom) · signature: layered hero + live 4-mode workbench · job: download */
+/* critique: Obsidian steel ground with singular crimson action signal; varied section compositions on strict 4px token rhythm */
+
+:root {
+  /* Core Surfaces */
+  --bg-void: #09090b;
+  --bg-surface: #111115;
+  --bg-elevated: #17171d;
+  --bg-code: #0d0d11;
+  --bg-scrim-top: rgba(9, 9, 11, 0.72);
+  --bg-scrim-mid: rgba(9, 9, 11, 0.54);
+  --bg-scrim-solid: rgba(9, 9, 11, 0.96);
+
+  /* Borders */
+  --border-hairline: #1d1d24;
+  --border-subtle: #282832;
+  --border-strong: #3b3b49;
+
+  /* Typography Ink (tinted off pure white for optical comfort, >= 4.5:1 contrast) */
+  --ink-primary: #f4f4f6;
+  --ink-secondary: #c0c0cc;
+  --ink-muted: #9191a2;
+  --ink-on-accent: #fdf4f4;
+
+  /* Singular Signal Accent: Abyssal Crimson */
+  --accent-primary: #dc2626;
+  --accent-hover: #b91c1c;
+  --accent-active: #991b1b;
+  --accent-soft: rgba(220, 38, 38, 0.14);
+  --accent-border: rgba(220, 38, 38, 0.42);
+
+  /* Semantic State (used strictly on real state: verified/copied) */
+  --state-ok: #22c55e;
+  --state-ok-soft: rgba(34, 197, 94, 0.14);
+
+  /* Typefaces */
+  --font-display: 'Bricolage Grotesque', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  /* Radii (deliberate hierarchy) */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Layout Measures & Strict 4px Spacing Scale */
+  --container-max: 1200px;
+  --nav-h: 64px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-med: 260ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-void);
+  color: var(--ink-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-void);
+  color: var(--ink-primary);
+  overflow-x: clip;
+  caret-color: var(--accent-primary);
+}
+
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--ink-on-accent);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+button,
+input {
+  font-family: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

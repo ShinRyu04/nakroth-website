@@ -1,0 +1,123 @@
+export type PlatformKey =
+  | 'windows_exe'
+  | 'windows_zip'
+  | 'linux_deb'
+  | 'linux_rpm'
+  | 'linux_appimage'
+  | 'macos_dmg'
+  | 'macos_pkg';
+
+export type OsFamily = 'windows' | 'linux' | 'macos';
+
+export interface ReleaseAsset {
+  filename: string;
+  url: string;
+  sha256: string;
+  size_mb: number;
+}
+
+export interface ReleaseManifest {
+  version: string;
+  tag: string;
+  released_at: string;
+  release_url: string;
+  checksums_url: string;
+  platforms: Record<PlatformKey, ReleaseAsset>;
+}
+
+export const FALLBACK_MANIFEST: ReleaseManifest = {
+  version: '1.0.1',
+  tag: 'v1.0.1',
+  released_at: '2026-11-23T14:58:00Z',
+  release_url: 'https://github.com/ShinRyu04/Nakroth/releases/tag/v1.0.1',
+  checksums_url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/SHA256SUMS.txt',
+  platforms: {
+    windows_exe: {
+      filename: 'Nakroth-Setup-1.0.1-x64.exe',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/Nakroth-Setup-1.0.1-x64.exe',
+      sha256: '84b780e872e581a4a446cd1bac7ff5a529792f7dfe2300a73057935978b83ec6',
+      size_mb: 30.19,
+    },
+    windows_zip: {
+      filename: 'Nakroth-Windows-x64-Portable.zip',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/Nakroth-Windows-x64-Portable.zip',
+      sha256: 'af457752b8b6fe9bdb7be70cb64bfdf4cce6bc73414799bd085073a4a7a78dfe',
+      size_mb: 41.98,
+    },
+    linux_deb: {
+      filename: 'nakroth_1.0.1_amd64.deb',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/nakroth_1.0.1_amd64.deb',
+      sha256: '0449bb9fe60318841f3ab59245b3ceb0aee81ebfd0615230167757c2310e83ca',
+      size_mb: 37.25,
+    },
+    linux_rpm: {
+      filename: 'nakroth-1.0.1-1.x86_64.rpm',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/nakroth-1.0.1-1.x86_64.rpm',
+      sha256: 'ca32f1cae1b11811c41e6f1ffd94c624c2b7847e43c97b7c2cc510ac9ac09a7a',
+      size_mb: 46.21,
+    },
+    linux_appimage: {
+      filename: 'Nakroth-1.0.1-x86_64.AppImage',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/Nakroth-1.0.1-x86_64.AppImage',
+      sha256: '4ba6373d4ad76adac2ca886bc3ec04ec947b5b384e9959c366dbb234668a8b49',
+      size_mb: 45.97,
+    },
+    macos_dmg: {
+      filename: 'Nakroth-1.0.1-arm64.dmg',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/Nakroth-1.0.1-arm64.dmg',
+      sha256: '963b4b16efde1a5ed2dce7df194f2f9f8a392888b145cd547502570ca8b455a5',
+      size_mb: 45.41,
+    },
+    macos_pkg: {
+      filename: 'Nakroth-1.0.1-arm64.pkg',
+      url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/Nakroth-1.0.1-arm64.pkg',
+      sha256: 'aea0594b16f7269a6031a7d60609785296a4b8877624ba502b958988a736a8977',
+      size_mb: 43.82,
+    },
+  },
+};
+
+export const INSTALL_COMMANDS: Record<OsFamily, string> = {
+  windows: 'irm https://github.com/ShinRyu04/Nakroth/releases/latest/download/install.ps1 | iex',
+  linux: 'curl -fsSL https://github.com/ShinRyu04/Nakroth/releases/latest/download/install.sh | sh',
+  macos: 'curl -fsSL https://github.com/ShinRyu04/Nakroth/releases/latest/download/install.sh | sh',
+};
+
+export function detectUserOs(): OsFamily {
+  if (typeof navigator === 'undefined') return 'windows';
+  const ua = `${navigator.userAgent} ${navigator.platform ?? ''}`.toLowerCase();
+  if (ua.includes('mac') || ua.includes('darwin')) return 'macos';
+  if (ua.includes('linux') || ua.includes('x11')) return 'linux';
+  return 'windows';
+}
+
+export function primaryAssetForOs(manifest: ReleaseManifest, os: OsFamily): ReleaseAsset {
+  switch (os) {
+    case 'macos':
+      return manifest.platforms.macos_dmg;
+    case 'linux':
+      return manifest.platforms.linux_deb;
+    default:
+      return manifest.platforms.windows_exe;
+  }
+}
+
+export function assetUrl(path: string): string {
+  const base = import.meta.env.BASE_URL || '/';
+  return `${base}${path.replace(/^\/+/, '')}`;
+}
+
+export async function loadLatestManifest(): Promise<ReleaseManifest> {
+  try {
+    const res = await fetch(assetUrl('latest.json'), { cache: 'no-store' });
+    if (res.ok) {
+      const data = (await res.json()) as ReleaseManifest;
+      if (data?.version && data?.platforms?.windows_exe) {
+        return data;
+      }
+    }
+  } catch {
+    // Fallback to embedded v1.0.1 manifest cleanly
+  }
+  return FALLBACK_MANIFEST;
+}
