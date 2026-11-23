@@ -35,7 +35,7 @@ export const FALLBACK_MANIFEST: ReleaseManifest = {
     windows_exe: {
       filename: 'Nakroth-Setup-1.0.1-x64.exe',
       url: 'https://github.com/ShinRyu04/Nakroth/releases/download/v1.0.1/Nakroth-Setup-1.0.1-x64.exe',
-      sha256: '84b780e872e581a4a446cd1bac7ff5a529792f7dfe2300a73057935978b83ec6',
+      sha256: 'e699530a2c540f02c1b1706e5f3f3126e2bab29dd1aefd08b1ad2a74d47b22c0',
       size_mb: 30.19,
     },
     windows_zip: {
