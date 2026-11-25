@@ -76,7 +76,7 @@ nakroth D:\\Projects\\my-service`,
         id: 'windows-install',
         heading: 'Windows 10 / 11 (x64)',
         paragraphs: [
-          'Run the PowerShell one-liner below (downloads the latest Inno Setup installer, verifies SHA-256 automatically, and launches setup), or download Nakroth-Setup-1.0.1-x64.exe from the Download Center.',
+          'Run the PowerShell one-liner below (downloads the latest Inno Setup installer, verifies SHA-256 automatically, and launches setup), or download Nakroth-Setup-1.1.2-x64.exe from the Download Center.',
         ],
         code: {
           label: 'PowerShell',
@@ -100,14 +100,14 @@ nakroth D:\\Projects\\my-service`,
 curl -fsSL https://github.com/ShinRyu04/Nakroth/releases/latest/download/install.sh | sh
 
 # Debian / Ubuntu / Mint / Pop!_OS
-sudo apt install ./nakroth_1.0.1_amd64.deb
+sudo apt install ./nakroth_1.1.2_amd64.deb
 
 # Fedora / openSUSE / RHEL
-sudo dnf install ./nakroth-1.0.1-1.x86_64.rpm
+sudo dnf install ./nakroth-1.1.2-1.x86_64.rpm
 
 # Universal AppImage
-chmod +x Nakroth-1.0.1-x86_64.AppImage
-./Nakroth-1.0.1-x86_64.AppImage`,
+chmod +x Nakroth-1.1.2-x86_64.AppImage
+./Nakroth-1.1.2-x86_64.AppImage`,
         },
       },
       {
@@ -135,7 +135,7 @@ xattr -cr /Applications/Nakroth.app`,
         code: {
           label: 'Checksum check',
           content: `# Windows PowerShell
-Get-FileHash -Algorithm SHA256 .\\Nakroth-Setup-1.0.1-x64.exe
+Get-FileHash -Algorithm SHA256 .\\Nakroth-Setup-1.1.2-x64.exe
 
 # Linux / macOS
 sha256sum -c SHA256SUMS.txt --ignore-missing`,

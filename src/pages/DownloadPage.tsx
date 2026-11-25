@@ -43,7 +43,7 @@ export function DownloadPage({ locale, manifest }: DownloadPageProps) {
     linux: [
       {
         title: 'Debian / Ubuntu / Mint (.deb)',
-        subtitle: 'Install with sudo apt install ./nakroth_1.0.1_amd64.deb',
+        subtitle: `Install with sudo apt install ./${manifest.platforms.linux_deb.filename}`,
         filename: manifest.platforms.linux_deb.filename,
         sizeMb: manifest.platforms.linux_deb.size_mb,
         sha256: manifest.platforms.linux_deb.sha256,
@@ -51,7 +51,7 @@ export function DownloadPage({ locale, manifest }: DownloadPageProps) {
       },
       {
         title: 'Fedora / openSUSE / RHEL (.rpm)',
-        subtitle: 'Install with sudo dnf install ./nakroth-1.0.1-1.x86_64.rpm',
+        subtitle: `Install with sudo dnf install ./${manifest.platforms.linux_rpm.filename}`,
         filename: manifest.platforms.linux_rpm.filename,
         sizeMb: manifest.platforms.linux_rpm.size_mb,
         sha256: manifest.platforms.linux_rpm.sha256,
