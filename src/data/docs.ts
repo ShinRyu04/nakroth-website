@@ -359,7 +359,7 @@ Esc                   Interrupt active AI turn`,
         id: 'macos-gatekeeper',
         heading: 'macOS "App is damaged" or unverified developer prompt',
         paragraphs: [
-          'Public v1.0.1 macOS builds are ad-hoc signed rather than notarized with a paid Apple Developer ID. Clear the quarantine flag once after moving Nakroth.app into /Applications:',
+          'Public v1.1.2 macOS builds are ad-hoc signed rather than notarized with a paid Apple Developer ID. Clear the quarantine flag once after moving Nakroth.app into /Applications:',
         ],
         code: {
           label: 'macOS Terminal',
