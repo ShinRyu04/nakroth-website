@@ -24,6 +24,23 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
         <div className="container">
           <article className="release-entry" data-reveal="">
             <div>
+              <div className="release-version">v1.1.3</div>
+              <div className="release-date">2026-11-26</div>
+            </div>
+            <div className="release-body">
+              <h3>Creator Mode (16 Labs), Universal Computer Use Bridge, Multi-Agent Login &amp; Full EN/ID/ZH i18n</h3>
+              <ul>
+                <li><strong>Top-Level Creator Mode (Ctrl+5):</strong> 16 pure-Rust interactive labs (Full Identity Pack, Theme Forge, Icon &amp; Pack Lab, Brand &amp; Logo Kit, Palette &amp; Tokens, CSS Visual Lab, UI Screen → Studio, Diagram &amp; Flow, Quick Starter, API &amp; Schema Forge, Mock Data &amp; Regex, README &amp; Docs, Git PR &amp; Release, Skill &amp; Rule Forge, Fleet Blueprint, Vault) — theme-synced with auto-contrast, active-agent filtering, and dedicated OpenCode vs BYOK API separation.</li>
+                <li><strong>Universal AI ↔ Computer Use Bridge:</strong> 14 native Win32 desktop tools, 7 granular permissions, blocked-apps guard, Esc kill switch, persisted ON/OFF consent, and a secure local loopback HTTP bridge automatically wired to every AI agent.</li>
+                <li><strong>Connection per Agent &amp; 1-Click CLI Login:</strong> dynamic per-agent connection bindings and interactive terminal sign-in (Login via agy, claude, opencode, omp, codex, gemini, pi, gh) directly inside Settings › Connections.</li>
+                <li><strong>Full EN / ID / 中文 (Mandarin) Localization:</strong> 100% translated interface across Editor, Fleet, Chat, Studio, Creator, Sidebar, Panels, Analytics, Extensions, and Settings.</li>
+                <li><strong>Native Windows Explorer Shell Integration &amp; Instant Extensions:</strong> &lt;2 ms pure-Rust Win32 Registry FFI (Open with Nakroth, safe Open With for 45+ code extensions, optional default handler &amp; safe Restore), 2-stage instant Extension README loading with 20-entry cache, theme-adaptive Studio Mode, and Multi-Agent Session Lanes alongside Fleet Classic.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article className="release-entry" data-reveal="" data-reveal-delay="1">
+            <div>
               <div className="release-version">v1.1.2</div>
               <div className="release-date">2026-11-25</div>
             </div>
@@ -99,15 +116,15 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
 
           <article className="release-entry" data-reveal="" data-reveal-delay="5">
             <div>
-              <div className="release-version">v1.1.3</div>
-              <div className="release-date">In active testing</div>
+              <div className="release-version">v1.1.4</div>
+              <div className="release-date">Upcoming roadmap</div>
             </div>
             <div className="release-body">
-              <h3>Upcoming release highlights</h3>
+              <h3>Next engineering focus</h3>
               <ul>
-                <li><strong>Original Multi-Agent Session Lanes:</strong> true per-session isolated CLI workers (1–4 split lanes, zero chat mixing), live File-Collision Radar, and 1-click Context Hand-off alongside Fleet Classic.</li>
-                <li><strong>Creative Studio Pro:</strong> Pure-Rust GPUI Vector Art (8-pt resize, Pen Bezier, Boolean ops, SVG), Multi-Layer Raster (layer masks, Flip/Rotate, Text, PNG), 3D Viewport &amp; UV Paint (3D Gizmo, Subdivide/Extrude, .obj/.gltf/Blender bridge), and Procedural Material Nodes (.wgsl/.glsl).</li>
-                <li><strong>VS Code-Grade Terminal &amp; Scroll Precision:</strong> character-level drag selection, multi-tab shell sidebar, proportional scrollbar, SGR 1006 TUI mouse forwarding, and viewport-exact scroll clamping across Editor &amp; all panels.</li>
+                <li><strong>Signed Release Distribution:</strong> Apple Developer notarized macOS builds and Authenticode signed Windows installers.</li>
+                <li><strong>Expanded Studio &amp; Plugin Ecosystem:</strong> deeper VS Code WebView2 extension API coverage, live collaborative multi-cursor canvas editing, and GPU shader preview nodes.</li>
+                <li><strong>Cross-OS Computer Use Parity:</strong> macOS Accessibility &amp; Linux X11/Wayland native backends for the Universal Computer Use Bridge.</li>
               </ul>
             </div>
           </article>

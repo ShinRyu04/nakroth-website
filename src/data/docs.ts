@@ -76,7 +76,7 @@ nakroth D:\\Projects\\my-service`,
         id: 'windows-install',
         heading: 'Windows 10 / 11 (x64)',
         paragraphs: [
-          'Run the PowerShell one-liner below (downloads the latest Inno Setup installer, verifies SHA-256 automatically, and launches setup), or download Nakroth-Setup-1.1.2-x64.exe from the Download Center.',
+          'Run the PowerShell one-liner below (downloads the latest Inno Setup installer, verifies SHA-256 automatically, and launches setup), or download Nakroth-Setup-1.1.3-x64.exe from the Download Center.',
         ],
         code: {
           label: 'PowerShell',
@@ -100,14 +100,14 @@ nakroth D:\\Projects\\my-service`,
 curl -fsSL https://github.com/ShinRyu04/Nakroth/releases/latest/download/install.sh | sh
 
 # Debian / Ubuntu / Mint / Pop!_OS
-sudo apt install ./nakroth_1.1.2_amd64.deb
+sudo apt install ./nakroth_1.1.3_amd64.deb
 
 # Fedora / openSUSE / RHEL
-sudo dnf install ./nakroth-1.1.2-1.x86_64.rpm
+sudo dnf install ./nakroth-1.1.3-1.x86_64.rpm
 
 # Universal AppImage
-chmod +x Nakroth-1.1.2-x86_64.AppImage
-./Nakroth-1.1.2-x86_64.AppImage`,
+chmod +x Nakroth-1.1.3-x86_64.AppImage
+./Nakroth-1.1.3-x86_64.AppImage`,
         },
       },
       {
@@ -135,7 +135,7 @@ xattr -cr /Applications/Nakroth.app`,
         code: {
           label: 'Checksum check',
           content: `# Windows PowerShell
-Get-FileHash -Algorithm SHA256 .\\Nakroth-Setup-1.1.2-x64.exe
+Get-FileHash -Algorithm SHA256 .\\Nakroth-Setup-1.1.3-x64.exe
 
 # Linux / macOS
 sha256sum -c SHA256SUMS.txt --ignore-missing`,
@@ -146,8 +146,8 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
   {
     slug: 'modes',
     group: 'Core',
-    title: 'Four Modes (Editor, Fleet, Chat, Studio)',
-    summary: 'How Nakroth organizes code editing, parallel agent orchestration, fullscreen conversation, and visual design into one fast surface.',
+    title: 'Five Modes (Editor, Fleet, Chat, Studio, Creator)',
+    summary: 'How Nakroth organizes code editing, parallel agent orchestration, fullscreen conversation, visual design, and 16 AI creator labs into one fast surface.',
     sections: [
       {
         id: 'editor-mode',
@@ -180,6 +180,13 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
           { lead: 'UI Designer (.kdsgn)', text: 'Drag 15 component types onto Desktop/Tablet/Mobile artboards, tune props in Koma Inspector, and export deterministic Rust GPUI, React+Tailwind, Vue, or HTML.' },
           { lead: 'Flowchart / Mermaid', text: 'Draw architecture flows with Bezier/Orthogonal connectors and sync two-way with Mermaid code or send directly to AI chat.' },
           { lead: 'Import Graph', text: 'Visualize project module/crate dependencies, compute upstream/downstream blast radius, and detect circular dependencies via Tarjan SCC.' },
+        ],
+      },
+      {
+        id: 'creator-mode',
+        heading: 'Creator Mode (Ctrl+5)',
+        paragraphs: [
+          '16 interactive pure-Rust and AI-powered creative labs (Full Identity Pack, Theme Forge, Icon & Pack Lab, Brand & Logo Kit, Palette & Tokens, CSS Visual Lab, UI Screen → Studio, Diagram & Flow, Quick Starter, API & Schema Forge, Mock Data & Regex, README & Docs, Git PR & Release, Skill & Rule Forge, Fleet Blueprint, and Vault) — automatically adapting to your active theme, enabled AI agents, and separated OpenCode vs BYOK API providers.',
         ],
       },
     ],
@@ -300,7 +307,7 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
     slug: 'shortcuts',
     group: 'Reference',
     title: 'Keyboard Shortcuts & Vim Mode',
-    summary: 'Core navigation bindings across all four workspaces plus optional native Vim modal editing.',
+    summary: 'Core navigation bindings across all five workspaces plus optional native Vim modal editing.',
     sections: [
       {
         id: 'core-bindings',
@@ -359,7 +366,7 @@ Esc                   Interrupt active AI turn`,
         id: 'macos-gatekeeper',
         heading: 'macOS "App is damaged" or unverified developer prompt',
         paragraphs: [
-          'Public v1.1.2 macOS builds are ad-hoc signed rather than notarized with a paid Apple Developer ID. Clear the quarantine flag once after moving Nakroth.app into /Applications:',
+          'Public v1.1.3 macOS builds are ad-hoc signed rather than notarized with a paid Apple Developer ID. Clear the quarantine flag once after moving Nakroth.app into /Applications:',
         ],
         code: {
           label: 'macOS Terminal',

@@ -1,51 +1,51 @@
 {
-  "version": "1.1.2",
-  "tag": "v1.1.2",
-  "released_at": "2026-11-25T07:55:00Z",
-  "release_url": "https://github.com/ShinRyu04/Nakroth/releases/tag/v1.1.2",
-  "checksums_url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/SHA256SUMS.txt",
+  "version": "1.1.3",
+  "tag": "v1.1.3",
+  "released_at": "2026-11-26T12:06:52Z",
+  "release_url": "https://github.com/ShinRyu04/Nakroth/releases/tag/v1.1.3",
+  "checksums_url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/SHA256SUMS.txt",
   "platforms": {
     "windows_exe": {
-      "filename": "Nakroth-Setup-1.1.2-x64.exe",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/Nakroth-Setup-1.1.2-x64.exe",
-      "sha256": "222aeca760f4c65b963d1f3d7d3f65ce49ca2718a4ace1c7f114cd9d4926f523",
-      "size_mb": 30.51
+      "filename": "Nakroth-Setup-1.1.3-x64.exe",
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/Nakroth-Setup-1.1.3-x64.exe",
+      "sha256": "2dbcc01db83e716d3ae4c807a20292ab2590e1787252aca487e5c263c8773d8c",
+      "size_mb": 31.01
     },
     "windows_zip": {
       "filename": "Nakroth-Windows-x64-Portable.zip",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/Nakroth-Windows-x64-Portable.zip",
-      "sha256": "2f6de13fb870452b424ebd8f8a391462bbaf66c7e322c7eb3403388fcafc6935",
-      "size_mb": 42.82
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/Nakroth-Windows-x64-Portable.zip",
+      "sha256": "d3af11b04b0cb8ff02536b3d9dfcca663c4c6c5c8b5a0e83c23488df6cb7158b",
+      "size_mb": 43.42
     },
     "linux_deb": {
-      "filename": "nakroth_1.1.2_amd64.deb",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/nakroth_1.1.2_amd64.deb",
-      "sha256": "27f6f77f8b075fe2b361b8f0eaa876c29558b51d4f53adee7cdcf04d8f36cc5f",
-      "size_mb": 37.48
+      "filename": "nakroth_1.1.3_amd64.deb",
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/nakroth_1.1.3_amd64.deb",
+      "sha256": "37701693c36028ae53fb3ecb15d66b091163ef1d8f263aa2f6880559472f70fd",
+      "size_mb": 38.23
     },
     "linux_rpm": {
-      "filename": "nakroth-1.1.2-1.x86_64.rpm",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/nakroth-1.1.2-1.x86_64.rpm",
-      "sha256": "b6bef229187da558b7403d57572fe8a970fad79d22bc0b992dc031f45c12c90e",
-      "size_mb": 46.72
+      "filename": "nakroth-1.1.3-1.x86_64.rpm",
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/nakroth-1.1.3-1.x86_64.rpm",
+      "sha256": "1d7cff16a2835e8c3d589eadc9b532a248b1d8dae650bdc7e3ce9529dee3a30d",
+      "size_mb": 47.62
     },
     "linux_appimage": {
-      "filename": "Nakroth-1.1.2-x86_64.AppImage",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/Nakroth-1.1.2-x86_64.AppImage",
-      "sha256": "5c859723386a340c4e196d5638601e034a6932b5b6a25d2b03045ebbb60c0885",
-      "size_mb": 46.43
+      "filename": "Nakroth-1.1.3-x86_64.AppImage",
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/Nakroth-1.1.3-x86_64.AppImage",
+      "sha256": "29f5ab324f6d7662c782e5ed352c5ca1c19800cdb46042a49bef6b6feb79d1e0",
+      "size_mb": 47.23
     },
     "macos_dmg": {
-      "filename": "Nakroth-1.1.2-arm64.dmg",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/Nakroth-1.1.2-arm64.dmg",
-      "sha256": "1f89c09608e50b1112558b1ec195d9a104a2fcab3d6d1e97e24bf9d6e76ad488",
-      "size_mb": 45.92
+      "filename": "Nakroth-1.1.3-arm64.dmg",
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/Nakroth-1.1.3-arm64.dmg",
+      "sha256": "7b3e93eeacd7755d0b07f07fc23f2794475dd667d580d1cefbc2b3287731ce63",
+      "size_mb": 46.8
     },
     "macos_pkg": {
-      "filename": "Nakroth-1.1.2-arm64.pkg",
-      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.2/Nakroth-1.1.2-arm64.pkg",
-      "sha256": "9eab8f800723b2f6f4647c2f67294641ad7cdc8cc68f2b732beb60f58cb293fc",
-      "size_mb": 44.31
+      "filename": "Nakroth-1.1.3-arm64.pkg",
+      "url": "https://github.com/ShinRyu04/Nakroth/releases/download/v1.1.3/Nakroth-1.1.3-arm64.pkg",
+      "sha256": "d7c6f85fa66b4136290deacc77d7bef0bfe55744e63dfa10ac2ab2138cf28e67",
+      "size_mb": 45.11
     }
   }
 }
