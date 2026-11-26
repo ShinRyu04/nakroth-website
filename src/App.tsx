@@ -17,8 +17,26 @@ function ScrollToTop() {
 }
 
 export function App() {
-  const [locale, setLocale] = useState<Locale>('en');
+  const [locale, setLocale] = useState<Locale>(() => {
+    try {
+      const saved = window.localStorage.getItem('nakroth_locale');
+      if (saved === 'en' || saved === 'id' || saved === 'zh') return saved;
+    } catch {
+      // ignore storage errors
+    }
+    return 'en';
+  });
   const [manifest, setManifest] = useState<ReleaseManifest>(FALLBACK_MANIFEST);
+
+  const handleLocaleChange = (next: Locale) => {
+    setLocale(next);
+    try {
+      window.localStorage.setItem('nakroth_locale', next);
+      document.documentElement.lang = next === 'zh' ? 'zh-CN' : next;
+    } catch {
+      // ignore storage errors
+    }
+  };
 
   useEffect(() => {
     let active = true;
@@ -35,7 +53,7 @@ export function App() {
   return (
     <BrowserRouter basename={basename}>
       <ScrollToTop />
-      <Layout locale={locale} onLocaleChange={setLocale} manifest={manifest}>
+      <Layout locale={locale} onLocaleChange={handleLocaleChange} manifest={manifest}>
         <Routes>
           <Route path="/" element={<HomePage locale={locale} manifest={manifest} />} />
           <Route path="/docs" element={<Navigate to="/docs/getting-started" replace />} />

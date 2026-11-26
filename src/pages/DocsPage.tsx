@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CopyCommand } from '../components/CopyCommand';
 import { SearchIcon } from '../components/Icons';
@@ -13,7 +13,22 @@ export function DocsPage({ locale }: DocsPageProps) {
   const { slug } = useParams();
   const [query, setQuery] = useState('');
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const searchRef = useRef<HTMLInputElement | null>(null);
   const t = UI_COPY[locale];
+  const d = t.docsUi;
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setMobileNavOpen(true);
+        searchRef.current?.focus();
+        searchRef.current?.select();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   const activeSlug = slug || DOC_PAGES[0].slug;
   const pageIndex = Math.max(
@@ -48,7 +63,7 @@ export function DocsPage({ locale }: DocsPageProps) {
           aria-expanded={mobileNavOpen}
           onClick={() => setMobileNavOpen((open) => !open)}
         >
-          <span>{locale === 'id' ? `Daftar Dokumentasi — ${page.title}` : `Docs menu — ${page.title}`}</span>
+          <span>{`${d.menuPrefix} — ${page.title}`}</span>
           <span>{mobileNavOpen ? '−' : '+'}</span>
         </button>
 
@@ -56,11 +71,12 @@ export function DocsPage({ locale }: DocsPageProps) {
           <div className="docs-search-wrap">
             <SearchIcon className="docs-search-icon" />
             <input
+              ref={searchRef}
               type="search"
               className="docs-search-input"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder={locale === 'id' ? 'Cari dokumentasi...' : 'Filter docs...'}
+              placeholder={d.filterPlaceholder}
               aria-label="Filter documentation pages"
             />
           </div>
@@ -89,9 +105,7 @@ export function DocsPage({ locale }: DocsPageProps) {
           })}
 
           {filteredPages.length === 0 && (
-            <p className="footer-copy">
-              {locale === 'id' ? 'Tidak ada halaman yang cocok.' : 'No matching documentation pages.'}
-            </p>
+            <p className="footer-copy">{d.noMatch}</p>
           )}
         </div>
       </aside>
@@ -141,7 +155,7 @@ export function DocsPage({ locale }: DocsPageProps) {
         <nav className="docs-pager" aria-label="Documentation pagination">
           {prevPage ? (
             <Link to={`/docs/${prevPage.slug}`} className="docs-pager-link">
-              <span className="docs-pager-label">{locale === 'id' ? 'Sebelumnya' : 'Previous'}</span>
+              <span className="docs-pager-label">{d.prev}</span>
               <span className="docs-pager-title">{prevPage.title}</span>
             </Link>
           ) : (
@@ -150,7 +164,7 @@ export function DocsPage({ locale }: DocsPageProps) {
 
           {nextPage && (
             <Link to={`/docs/${nextPage.slug}`} className="docs-pager-link">
-              <span className="docs-pager-label">{locale === 'id' ? 'Berikutnya' : 'Next'}</span>
+              <span className="docs-pager-label">{d.next}</span>
               <span className="docs-pager-title">{nextPage.title}</span>
             </Link>
           )}
@@ -158,7 +172,7 @@ export function DocsPage({ locale }: DocsPageProps) {
       </article>
 
       <aside className="docs-toc" aria-label="On this page">
-        <div className="docs-toc-title">{locale === 'id' ? 'Di halaman ini' : 'On this page'}</div>
+        <div className="docs-toc-title">{d.onThisPage}</div>
         <ul>
           {page.sections.map((s) => (
             <li key={s.id}>

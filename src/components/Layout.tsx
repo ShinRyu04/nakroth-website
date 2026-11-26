@@ -72,6 +72,14 @@ export function Layout({ locale, onLocaleChange, manifest, children }: LayoutPro
               >
                 ID
               </button>
+              <button
+                type="button"
+                className="lang-btn"
+                aria-pressed={locale === 'zh'}
+                onClick={() => onLocaleChange('zh')}
+              >
+                中文
+              </button>
             </div>
 
             <Link to="/download" className="btn-primary btn-sm">

@@ -168,7 +168,31 @@ export function HomePage({ locale, manifest }: HomePageProps) {
         </div>
       </section>
 
-      <section className="band band--surface" aria-labelledby="bench-heading">
+      <section className="band band--surface" aria-labelledby="v113-heading">
+        <div className="container">
+          <div className="section-head" data-reveal="">
+            <h2 id="v113-heading" className="section-title">
+              {t.v113.title}
+            </h2>
+            <p className="section-desc">{t.v113.desc}</p>
+          </div>
+
+          <div className="studios-columns">
+            {t.v113.cards.map((card, idx) => (
+              <div key={card.title} className="studio-group" data-reveal="" data-reveal-delay={String(idx)}>
+                <h3>{card.title}</h3>
+                <ul>
+                  {card.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band" aria-labelledby="bench-heading">
         <div className="container">
           <div className="bench-layout">
             <div data-reveal="">

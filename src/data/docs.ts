@@ -215,9 +215,59 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
       },
       {
         id: 'other-providers',
-        heading: 'Codex, OpenCode, Gemini & BYOM',
+        heading: 'Connection per Agent, 1-Click CLI Login & Separate BYOK API',
         paragraphs: [
-          'Switch providers per thread from the composer popover. For direct API usage (Anthropic, OpenAI, Gemini, DeepSeek, or local Ollama), Nakroth provides native SSE streaming with sandboxed workspace tool calling (read_file, write_file, run_cmd, todo_add).',
+          'Open Settings › Connections to sign in directly to any active CLI agent inside Nakroth\'s ConPTY terminal (Login via agy, claude, opencode, omp, codex, gemini, pi, gh) or bind a saved BYOK API connection per agent.',
+          'OpenCode and BYOK Direct API (Anthropic, OpenAI, Gemini, DeepSeek, Z.ai, OpenRouter, Ollama) are strictly separated so models never mix across engines.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'computer-use',
+    group: 'Core',
+    title: 'Computer Use Bridge & Windows Shell',
+    summary: '14 native Win32 automation tools with 7 granular permissions, Esc kill switch, and <2 ms pure-Rust Windows Explorer integration.',
+    sections: [
+      {
+        id: 'cu-bridge',
+        heading: 'Universal AI ↔ Computer Use Bridge',
+        paragraphs: [
+          'When enabled in Settings › Computer Use or from the Status Bar pill, Nakroth exposes a token-authenticated loopback HTTP bridge (127.0.0.1) and injects NAKROTH_COMPUTER_USE_URL + NAKROTH_COMPUTER_USE_TOKEN into every active CLI worker, Multi-Agent Fleet lane, and BYOK session.',
+        ],
+        bullets: [
+          { lead: '7 Granular Permissions', text: 'Toggle Screen Capture, Mouse, Keyboard, Windows, App Launcher, Clipboard, and Process Listing independently.' },
+          { lead: 'Safety Guardrails', text: 'Full Auto, Guarded, and Read-Only modes, Blocked/Protected Apps list (e.g. password managers, Task Manager), live Audit Log, and instant Esc kill switch.' },
+          { lead: 'Persisted State', text: 'Master ON/OFF consent and all safety rules persist automatically across restarts.' },
+        ],
+      },
+      {
+        id: 'win-shell',
+        heading: 'Native Windows Explorer Integration (<2 ms)',
+        paragraphs: [
+          'In Settings › General, toggle "Open with Nakroth" right-click menus, safe "Open With" registration across 45+ code file extensions (without hijacking your existing default icons), optional Default Code Editor handler, and Safe 1-Click Restore — all via pure-Rust advapi32.dll Registry FFI with zero UAC prompts.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mobile-companion',
+    group: 'Core',
+    title: 'Mobile Companion & Custom VPS Relay',
+    summary: 'Control your desktop Nakroth AI agents, terminal, and tool approvals from your phone via ISO QR pairing or Custom VPS Relay.',
+    sections: [
+      {
+        id: 'mobile-qr',
+        heading: '10-Screen OLED Mobile Cockpit',
+        paragraphs: [
+          'Open Settings › Phone Connection to start the native relay and scan the ISO QR code from your phone. All prompts, approvals, terminal sessions, and diff reviews run directly through your desktop Nakroth instance — zero API keys or logins required on your phone.',
+        ],
+      },
+      {
+        id: 'vps-relay',
+        heading: 'Cross-Network 4G / 5G via Custom VPS Relay',
+        paragraphs: [
+          'When away from home Wi-Fi, enable the built-in SSH Reverse Tunnel (-R) to your own VPS or reverse proxy domain (Nginx / Caddy / Tailscale) — the pairing QR updates automatically.',
         ],
       },
     ],
@@ -317,16 +367,16 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
         ],
         code: {
           label: 'Keybindings',
-          content: `Ctrl+1 / 2 / 3 / 4    Switch Editor / Fleet / Chat / Studio mode
-Ctrl+Shift+P          Open Omni-Command Palette (145+ actions)
-Ctrl+P                Fuzzy Quick Open file
-Ctrl+O                Open Folder (native OS dialog)
-Ctrl+S                Save file (auto-uploads if Remote VPS file)
-Ctrl+B                Toggle Left Sidebar
-Ctrl+\`                Toggle Bottom Terminal Panel
-Ctrl+L                Toggle Right AI Cockpit
-Ctrl+Shift+F          Global Ripgrep Search & Replace
-Esc                   Interrupt active AI turn`,
+          content: `Ctrl+1 / 2 / 3 / 4 / 5  Switch Editor / Fleet / Chat / Studio / Creator mode
+Ctrl+Shift+P            Open Omni-Command Palette (145+ actions)
+Ctrl+P                  Fuzzy Quick Open file
+Ctrl+O                  Open Folder (native OS dialog)
+Ctrl+S                  Save file (auto-uploads if Remote VPS file)
+Ctrl+B                  Toggle Left Sidebar
+Ctrl+\`                  Toggle Bottom Terminal Panel
+Ctrl+L                  Toggle Right AI Cockpit
+Ctrl+Shift+F            Global Ripgrep Search & Replace
+Esc                     Interrupt active AI turn / Computer Use Kill Switch`,
         },
       },
       {

@@ -1,22 +1,17 @@
-import type { Locale } from '../data/i18n';
+import { UI_COPY, type Locale } from '../data/i18n';
 
 interface ChangelogPageProps {
   locale: Locale;
 }
 
 export function ChangelogPage({ locale }: ChangelogPageProps) {
+  const c = UI_COPY[locale].changelogPage;
   return (
     <>
       <section className="page-header">
         <div className="container">
-          <h1 className="section-title">
-            {locale === 'id' ? 'Changelog & Roadmap' : 'Changelog & Roadmap'}
-          </h1>
-          <p className="section-desc">
-            {locale === 'id'
-              ? 'Catatan rilis nyata yang sudah terpasang di binary, beserta rencana kerja versi berikutnya.'
-              : 'Every shipped release change alongside the upcoming engineering roadmap.'}
-          </p>
+          <h1 className="section-title">{c.title}</h1>
+          <p className="section-desc">{c.desc}</p>
         </div>
       </section>
 
