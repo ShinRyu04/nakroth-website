@@ -10,7 +10,7 @@ export const UI_COPY = {
     },
     hero: {
       title: 'The native Rust IDE for AI agents.',
-      lead: 'One Pure-Rust GPUI workspace uniting 5 modes, persistent agent workers, OS AI notifications, Universal Computer Use, 6 languages, and 22 native studios.',
+      lead: 'One Pure-Rust GPUI workspace uniting 4 modes, persistent agent workers, OS AI notifications, Universal Computer Use, 6 languages, and 22 native studios.',
       downloadFor: {
         windows: 'Download for Windows',
         linux: 'Download for Linux',
@@ -52,8 +52,8 @@ export const UI_COPY = {
       ],
     },
     modes: {
-      title: 'Five workspaces inside one executable',
-      desc: 'Switch directly between code, parallel agent fleets, fullscreen chat, visual architecture, and 16 AI creator labs without spawning separate browser windows.',
+      title: 'Four workspaces inside one executable',
+      desc: 'Switch directly between code, parallel agent fleets, fullscreen chat, and Creator Mode (with integrated visual Studio, diagrams & creative labs) without spawning separate browser windows.',
       items: [
         {
           id: 'editor',
@@ -98,30 +98,16 @@ export const UI_COPY = {
           ],
         },
         {
-          id: 'studio',
-          label: 'Studio',
-          shortcut: 'Ctrl+4',
-          image: '/media/studio.png',
-          alt: 'Nakroth Studio mode showing Visual UI Designer artboard and Inspector',
-          heading: 'Theme-adaptive UI designer, Mermaid diagrams, and import graphs',
-          body: 'Sketch layouts on Dark or Light themes, inspect crate dependency cycles, and compile visual components directly into deterministic Rust GPUI, React Tailwind, Vue, or HTML code.',
-          points: [
-            ['Two-way AI bridge', 'Send designs to your agent or open AI-generated Mermaid and UI blocks in Studio'],
-            ['Figma/Penpot-grade Inspector', 'Adjust dimensions, radius, typography, and viewports with 8px snap alignment'],
-            ['Tarjan cycle detection', 'Inspect workspace crate graphs and highlight upstream/downstream blast radius'],
-          ],
-        },
-        {
           id: 'creator',
           label: 'Creator',
-          shortcut: 'Ctrl+5',
+          shortcut: 'Ctrl+4',
           image: '/media/creator.png',
           alt: 'Nakroth Creator mode showing Full Identity Pack with live syntax & surface preview',
-          heading: '16 interactive pure-Rust & AI creative labs with Rollback',
-          body: 'Forge full IDE themes, 8-category SVG icon packs, brand kits, WCAG palettes, CSS glass/mesh snippets, 4-in-1 API schemas, scoped Git PRs, and agent skills — with permanent version snapshots, inline Diff preview, and 1-click Rollback.',
+          heading: 'All-in-one Creator labs, visual Studio, diagrams & 1-click Rollback',
+          body: 'Forge full IDE themes, 8-category SVG icon packs, brand kits, WCAG palettes, CSS labs, UI/Diagram Studio flows, 4-in-1 API schemas, scoped Git PRs, and agent skills — with permanent version snapshots, inline Diff preview, and 1-click Rollback.',
           points: [
             ['Instant Local + Active AI', 'Run offline in <5 ms or switch between your active CLIs and dedicated BYOK API'],
-            ['Full Identity Pack', 'One prompt builds & applies IDE Theme + 8 Icons + Logo SVG + Workspace Look'],
+            ['Full Identity & Visual Studio', 'Build IDE Theme + 8 Icons + Logo SVG + Diagram & Flow → Studio in one place'],
             ['Permanent Versioning & Rollback', 'Every Creator write is tracked in Vault with inline Diff and 1-click ↺ Rollback'],
           ],
         },
@@ -205,7 +191,7 @@ export const UI_COPY = {
     },
     hero: {
       title: 'IDE Rust native untuk agen AI.',
-      lead: 'Satu aplikasi GPUI pure-Rust yang menyatukan 5 mode kerja, worker AI persisten, notifikasi OS AI, Universal Computer Use, 6 bahasa, dan 22 studio native.',
+      lead: 'Satu aplikasi GPUI pure-Rust yang menyatukan 4 mode kerja, worker AI persisten, notifikasi OS AI, Universal Computer Use, 6 bahasa, dan 22 studio native.',
       downloadFor: {
         windows: 'Unduh untuk Windows',
         linux: 'Unduh untuk Linux',
@@ -247,8 +233,8 @@ export const UI_COPY = {
       ],
     },
     modes: {
-      title: 'Lima workspace dalam satu binary',
-      desc: 'Pindah cepat antara editor kode, orkestrasi agen paralel, chat fullscreen, perancangan visual, dan 16 lab kreator AI tanpa membuka jendela browser tambahan.',
+      title: 'Empat workspace dalam satu binary',
+      desc: 'Pindah cepat antara editor kode, orkestrasi agen paralel, chat fullscreen, dan Creator Mode (termasuk Studio visual, diagram & lab kreator AI) tanpa membuka jendela browser tambahan.',
       items: [
         {
           id: 'editor',
@@ -293,30 +279,16 @@ export const UI_COPY = {
           ],
         },
         {
-          id: 'studio',
-          label: 'Studio',
-          shortcut: 'Ctrl+4',
-          image: '/media/studio.png',
-          alt: 'Mode Studio Nakroth menampilkan Visual UI Designer dan Inspector',
-          heading: 'Desainer UI adaptif tema, diagram Mermaid, dan grafik impor',
-          body: 'Susun antarmuka di tema Gelap maupun Terang, lacak dependensi siklik, dan kompilasi komponen visual langsung menjadi kode deterministik Rust GPUI, React Tailwind, Vue, atau HTML.',
-          points: [
-            ['Jembatan AI dua arah', 'Kirim desain ke agen atau buka blok Mermaid dan UI dari respons AI'],
-            ['Inspektor gaya Figma/Penpot', 'Atur dimensi, radius, tipografi, dan viewport dengan snap grid 8px'],
-            ['Deteksi siklus Tarjan', 'Petakan grafik impor proyek beserta dampak upstream dan downstream'],
-          ],
-        },
-        {
           id: 'creator',
           label: 'Creator',
-          shortcut: 'Ctrl+5',
+          shortcut: 'Ctrl+4',
           image: '/media/creator.png',
           alt: 'Mode Creator Nakroth menampilkan Full Identity Pack dengan Live Preview',
-          heading: '16 lab kreatif pure-Rust & AI dengan Rollback 1-klik',
-          body: 'Buat tema IDE penuh, paket 8 ikon SVG, brand kit, palet WCAG, CSS glass/mesh, skema API 4-in-1, Git PR, dan skill agen — lengkap dengan snapshot versi permanen, pratinjau Diff, dan 1-klik Rollback di Vault.',
+          heading: 'Lab kreator pure-Rust, Studio visual, diagram & Rollback 1-klik',
+          body: 'Buat tema IDE penuh, paket 8 ikon SVG, brand kit, palet WCAG, CSS lab, alur Diagram & Flow → Studio, skema API 4-in-1, Git PR, dan skill agen — lengkap dengan snapshot versi permanen, pratinjau Diff, dan 1-klik Rollback di Vault.',
           points: [
             ['Lokal Instan + AI Aktif', 'Jalan offline <5 ms atau pilih agen CLI aktif & BYOK API terpisah'],
-            ['Paket Identitas Penuh', 'Satu prompt langsung membentuk Tema IDE + 8 Ikon + Logo SVG + Look'],
+            ['Paket Identitas & Studio Visual', 'Tema IDE + 8 Ikon + Logo SVG + Diagram & Flow → Studio menyatu di Creator'],
             ['Versioning Permanen & Rollback', 'Setiap perubahan Creator tersimpan di Vault lengkap dengan Diff & ↺ Rollback'],
           ],
         },
@@ -400,7 +372,7 @@ export const UI_COPY = {
     },
     hero: {
       title: '专为 AI 智能体打造的原生 Rust IDE。',
-      lead: '纯 Rust GPUI 原生工作台，融合五大工作模式、持久化智能体、原生系统 AI 通知、通用桌面控制、6 国语言与 22 个原生工作室。',
+      lead: '纯 Rust GPUI 原生工作台，融合四大工作模式、持久化智能体、原生系统 AI 通知、通用桌面控制、6 国语言与 22 个原生工作室。',
       downloadFor: {
         windows: '下载 Windows 版',
         linux: '下载 Linux 版',
@@ -442,8 +414,8 @@ export const UI_COPY = {
       ],
     },
     modes: {
-      title: '五大工作区，融于单一原生程序',
-      desc: '在代码编辑、多智能体舰队、全屏对话、可视化架构设计与 16 个 AI 创作工坊之间瞬时切换，零浏览器窗口冗余。',
+      title: '四大工作区，融于单一原生程序',
+      desc: '在代码编辑、多智能体舰队、全屏对话与创作中心（整合可视化工作室、流程图与 AI 创作工坊）之间瞬时切换，零浏览器窗口冗余。',
       items: [
         {
           id: 'editor',
@@ -488,30 +460,16 @@ export const UI_COPY = {
           ],
         },
         {
-          id: 'studio',
-          label: '工作室',
-          shortcut: 'Ctrl+4',
-          image: '/media/studio.png',
-          alt: 'Nakroth 工作室模式展示可视化 UI 设计器与属性检查器',
-          heading: '自适应主题 UI 设计器、Mermaid 流程图与依赖图',
-          body: '在暗色与亮色主题下自由设计界面，检测循环依赖，并将画布组件编译为确定性的 Rust GPUI、React Tailwind、Vue 或 HTML 代码。',
-          points: [
-            ['双向 AI 桥接', '将画布发送给 AI，或将 AI 生成的 Mermaid 图表与 UI 块直接在工作室打开'],
-            ['Figma/Penpot 级检查器', '支持 8px 网格吸附对齐、多视口预览、图层锁定与属性微调'],
-            ['Tarjan 循环依赖检测', '可视化分析项目模块依赖关系及上下游影响范围'],
-          ],
-        },
-        {
           id: 'creator',
           label: '创作中心',
-          shortcut: 'Ctrl+5',
+          shortcut: 'Ctrl+4',
           image: '/media/creator.png',
           alt: 'Nakroth 创作中心 Full Identity Pack 与实时预览界面',
-          heading: '16 个纯 Rust 与 AI 驱动的交互式创作工坊',
-          body: '一键锻造完整 IDE 主题、8 类矢量图标包、品牌 Logo 套件、WCAG 配色、CSS 玻璃/渐变、四合一 API 模型、Git PR 与智能体技能 — 内置永久版本记录、Diff 预览与一键回滚。',
+          heading: '纯 Rust 创作工坊、可视化工作室、流程图与一键回滚',
+          body: '一键锻造完整 IDE 主题、8 类矢量图标包、品牌 Logo 套件、WCAG 配色、CSS 工坊、流程图与可视化工作室、四合一 API 模型、Git PR 与智能体技能 — 内置永久版本记录、Diff 预览与一键回滚。',
           points: [
             ['本地极速引擎 + 实时 AI', '离线 <5 ms 瞬间生成，或切换至任意已启用的 CLI 与独立 BYOK API'],
-            ['全套视觉识别包', '一句提示词同时生成并应用 IDE 主题 + 8 类图标 + Logo SVG + 外观预设'],
+            ['视觉识别与工作室合一', '在同一空间打造 IDE 主题 + 8 类图标 + Logo SVG + Diagram & Flow → Studio'],
             ['永久版本与一键回滚', '所有创作改动自动记录于 Vault，随时查看 Diff 并一键 ↺ 恢复'],
           ],
         },
@@ -617,7 +575,7 @@ export const AGENT_MATRIX = [
   {
     name: 'Gemini CLI, Copilot, Hermes, Qwen, Kimi, Cursor',
     transport: 'Auto-discovered CLI connectors',
-    capabilities: 'Canonical PATH discovery, per-agent enable/disable sync across all 5 modes, 1-click CLI login',
+    capabilities: 'Canonical PATH discovery, per-agent enable/disable sync across all 4 modes, 1-click CLI login',
   },
   {
     name: 'BYOK Direct API & Ollama',

@@ -146,8 +146,8 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
   {
     slug: 'modes',
     group: 'Core',
-    title: 'Five Modes (Editor, Fleet, Chat, Studio, Creator)',
-    summary: 'How Nakroth organizes code editing, parallel agent orchestration, fullscreen conversation, visual design, and 16 AI creator labs into one fast surface.',
+    title: 'Four Modes (Editor, Fleet, Chat, Creator)',
+    summary: 'How Nakroth organizes code editing, parallel agent orchestration, fullscreen conversation, and Creator Mode (with integrated visual Studio & diagrams) into one fast surface.',
     sections: [
       {
         id: 'editor-mode',
@@ -171,23 +171,16 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
         ],
       },
       {
-        id: 'studio-mode',
-        heading: 'Studio Mode (Ctrl+4)',
+        id: 'creator-mode',
+        heading: 'Creator Mode (Ctrl+4)',
         paragraphs: [
-          'Three visual engineering canvases built straight into GPUI:',
+          'Unifies all pure-Rust & AI creative labs (Full Identity Pack, Theme Forge, Icon & Pack Lab, Brand & Logo Kit, Palette & Tokens, CSS Visual Lab, Diagram & Flow → Studio, Quick Starter, API & Schema Forge, Mock Data & Regex, README & Docs, Git PR & Release Notes, Skill & Rule Forge, Fleet Team Blueprint, and Vault) — automatically adapting to your active theme, enabled AI agents, and separated OpenCode vs BYOK API providers.',
+          'Every workspace file, skill, rule, Theme Forge look, and Icon Pack edit is automatically snapshotted into .nakroth/creator-versions.json with inline Diff preview and 1-click ↺ Rollback in Vault.',
         ],
         bullets: [
-          { lead: 'UI Designer (.kdsgn)', text: 'Drag 15 component types onto Desktop/Tablet/Mobile artboards, tune props in Koma Inspector, and export deterministic Rust GPUI, React+Tailwind, Vue, or HTML.' },
-          { lead: 'Flowchart / Mermaid', text: 'Draw architecture flows with Bezier/Orthogonal connectors and sync two-way with Mermaid code or send directly to AI chat.' },
-          { lead: 'Import Graph', text: 'Visualize project module/crate dependencies, compute upstream/downstream blast radius, and detect circular dependencies via Tarjan SCC.' },
-        ],
-      },
-      {
-        id: 'creator-mode',
-        heading: 'Creator Mode (Ctrl+5)',
-        paragraphs: [
-          '16 interactive pure-Rust and AI-powered creative labs (Full Identity Pack, Theme Forge, Icon & Pack Lab, Brand & Logo Kit, Palette & Tokens, CSS Visual Lab, UI Screen → Studio, Diagram & Flow, Quick Starter, API & Schema Forge, Mock Data & Regex, README & Docs, Git PR & Release, Skill & Rule Forge, Fleet Blueprint, and Vault) — automatically adapting to your active theme, enabled AI agents, and separated OpenCode vs BYOK API providers.',
-          'Every workspace file, skill, rule, Theme Forge look, and Icon Pack edit is automatically snapshotted into .nakroth/creator-versions.json with inline Diff preview and 1-click ↺ Rollback in Vault.',
+          { lead: 'Diagram & Flow → Studio', text: 'Visual UI Designer (.kdsgn) with deterministic Rust GPUI / React Tailwind / Vue / HTML codegen, two-way Mermaid Flowcharts, and Tarjan Import Graph built straight into Creator workflows.' },
+          { lead: 'Full Identity & Brand Kits', text: 'Generate IDE themes, 8-category SVG icon packs, brand SVG logos, and WCAG color tokens offline in <5 ms or with any active AI agent.' },
+          { lead: 'Vault Versioning & Rollback', text: 'Inspect compact diffs for every Creator artifact change and roll back with 1 click.' },
         ],
       },
     ],
@@ -358,7 +351,7 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
     slug: 'shortcuts',
     group: 'Reference',
     title: 'Keyboard Shortcuts & Vim Mode',
-    summary: 'Core navigation bindings across all five workspaces plus optional native Vim modal editing.',
+    summary: 'Core navigation bindings across all four workspaces plus optional native Vim modal editing.',
     sections: [
       {
         id: 'core-bindings',
@@ -368,7 +361,7 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
         ],
         code: {
           label: 'Keybindings',
-          content: `Ctrl+1 / 2 / 3 / 4 / 5  Switch Editor / Fleet / Chat / Studio / Creator mode
+          content: `Ctrl+1 / 2 / 3 / 4      Switch Editor / Fleet / Chat / Creator mode
 Ctrl+Shift+P            Open Omni-Command Palette (145+ actions)
 Ctrl+P                  Fuzzy Quick Open file
 Ctrl+O                  Open Folder (native OS dialog)
