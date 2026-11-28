@@ -89,7 +89,7 @@ export function DownloadPage({ locale, manifest }: DownloadPageProps) {
 
   const activeRows = rowsByOs[selectedOs];
   const checksumBlock = activeRows.map((r) => `${r.sha256}  ${r.filename}`).join('\n');
-  const releaseDate = manifest.released_at ? manifest.released_at.slice(0, 10) : '2026-11-26';
+  const releaseDate = manifest.released_at ? manifest.released_at.slice(0, 10) : '2026-11-28';
 
   return (
     <>

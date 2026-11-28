@@ -19,6 +19,37 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
         <div className="container">
           <article className="release-entry" data-reveal="">
             <div>
+              <div className="release-version">v1.1.5</div>
+              <div className="release-date">2026-11-28</div>
+            </div>
+            <div className="release-body">
+              <h3>6-Language i18n, OS AI Toast + Embedded 21/27 Voices, Creator Rollback, Pro VT100 Terminal &amp; Native Win11 Drag</h3>
+              <ul>
+                <li><strong>6-Language Localization (EN / ID / 中文 / VI / TH / JA):</strong> added full Vietnamese, Thai, and Japanese YAML + phrase packs with a clean Language Dropdown in Settings › General and sidebar quick switcher.</li>
+                <li><strong>Real OS AI Completion Notifications &amp; Embedded 21/27 Voice Pack:</strong> native Windows Action Center Toast, macOS, and Linux OS notifications when AI finishes, errors, or awaits approval while unfocused, paired with embedded RustEmbed full-length 21 AoV Executioner &amp; 27 Yuki Kaji Dimension Breaker voices (works offline on installer and portable builds).</li>
+                <li><strong>Creator Mode Permanent Versioning, Diff &amp; 1-Click Rollback:</strong> every workspace file, skill, rule, Theme Forge look, and Icon Pack edit is snapshotted in .nakroth/creator-versions.json with inline Diff preview and instant ↺ Rollback in Vault.</li>
+                <li><strong>Pro VT100 ConPTY Terminal &amp; Universal ~/.agents/skills:</strong> Win32 EnumFontFamiliesExW exact monospace resolver, single-StyledText GPU rendering, seamless full-bleed sidebar shading for opencode/omp/PS7, SGR 1006 mouse wheel scrolling, real CSI 3 J scrollback clear, and automatic universal ~/.agents/skills discovery.</li>
+                <li><strong>Flush-Left GitHub Markdown Preview &amp; Native Window Controls:</strong> full-width cached Markdown preview with GitHub HTML table 2-column card grids, native Windows 11 Aero Snap / multi-monitor dragging, global sticky-drag fix, crash-isolated Node Extension Host auto-restart, and decluttered Computer Use settings.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article className="release-entry" data-reveal="" data-reveal-delay="1">
+            <div>
+              <div className="release-version">v1.1.4</div>
+              <div className="release-date">2026-11-27</div>
+            </div>
+            <div className="release-body">
+              <h3>Persistent OpenCode ACP &amp; Pi RPC Speed, Codex Stdin Fix &amp; 31-Bug Hardening</h3>
+              <ul>
+                <li>Upgraded OpenCode and Pi to persistent bidirectional ACP/RPC sessions with warm follow-up speed and fixed Codex stdin piping reliability.</li>
+                <li>Hardened 31 workspace edge cases across editor, terminal, threads, and panels, plus cleaner topbar navigation and collapsible Thread History.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article className="release-entry" data-reveal="" data-reveal-delay="1">
+            <div>
               <div className="release-version">v1.1.3</div>
               <div className="release-date">2026-11-26</div>
             </div>
@@ -111,7 +142,7 @@ export function ChangelogPage({ locale }: ChangelogPageProps) {
 
           <article className="release-entry" data-reveal="" data-reveal-delay="5">
             <div>
-              <div className="release-version">v1.1.4</div>
+              <div className="release-version">v1.1.6</div>
               <div className="release-date">Upcoming roadmap</div>
             </div>
             <div className="release-body">

@@ -76,7 +76,7 @@ nakroth D:\\Projects\\my-service`,
         id: 'windows-install',
         heading: 'Windows 10 / 11 (x64)',
         paragraphs: [
-          'Run the PowerShell one-liner below (downloads the latest Inno Setup installer, verifies SHA-256 automatically, and launches setup), or download Nakroth-Setup-1.1.3-x64.exe from the Download Center.',
+          'Run the PowerShell one-liner below (downloads the latest Inno Setup installer, verifies SHA-256 automatically, and launches setup), or download Nakroth-Setup-1.1.5-x64.exe from the Download Center.',
         ],
         code: {
           label: 'PowerShell',
@@ -100,14 +100,14 @@ nakroth D:\\Projects\\my-service`,
 curl -fsSL https://github.com/ShinRyu04/Nakroth/releases/latest/download/install.sh | sh
 
 # Debian / Ubuntu / Mint / Pop!_OS
-sudo apt install ./nakroth_1.1.3_amd64.deb
+sudo apt install ./nakroth_1.1.5_amd64.deb
 
 # Fedora / openSUSE / RHEL
-sudo dnf install ./nakroth-1.1.3-1.x86_64.rpm
+sudo dnf install ./nakroth-1.1.5-1.x86_64.rpm
 
 # Universal AppImage
-chmod +x Nakroth-1.1.3-x86_64.AppImage
-./Nakroth-1.1.3-x86_64.AppImage`,
+chmod +x Nakroth-1.1.5-x86_64.AppImage
+./Nakroth-1.1.5-x86_64.AppImage`,
         },
       },
       {
@@ -135,7 +135,7 @@ xattr -cr /Applications/Nakroth.app`,
         code: {
           label: 'Checksum check',
           content: `# Windows PowerShell
-Get-FileHash -Algorithm SHA256 .\\Nakroth-Setup-1.1.3-x64.exe
+Get-FileHash -Algorithm SHA256 .\\Nakroth-Setup-1.1.5-x64.exe
 
 # Linux / macOS
 sha256sum -c SHA256SUMS.txt --ignore-missing`,
@@ -187,6 +187,7 @@ sha256sum -c SHA256SUMS.txt --ignore-missing`,
         heading: 'Creator Mode (Ctrl+5)',
         paragraphs: [
           '16 interactive pure-Rust and AI-powered creative labs (Full Identity Pack, Theme Forge, Icon & Pack Lab, Brand & Logo Kit, Palette & Tokens, CSS Visual Lab, UI Screen → Studio, Diagram & Flow, Quick Starter, API & Schema Forge, Mock Data & Regex, README & Docs, Git PR & Release, Skill & Rule Forge, Fleet Blueprint, and Vault) — automatically adapting to your active theme, enabled AI agents, and separated OpenCode vs BYOK API providers.',
+          'Every workspace file, skill, rule, Theme Forge look, and Icon Pack edit is automatically snapshotted into .nakroth/creator-versions.json with inline Diff preview and 1-click ↺ Rollback in Vault.',
         ],
       },
     ],
@@ -416,7 +417,7 @@ Esc                     Interrupt active AI turn / Computer Use Kill Switch`,
         id: 'macos-gatekeeper',
         heading: 'macOS "App is damaged" or unverified developer prompt',
         paragraphs: [
-          'Public v1.1.3 macOS builds are ad-hoc signed rather than notarized with a paid Apple Developer ID. Clear the quarantine flag once after moving Nakroth.app into /Applications:',
+          'Public v1.1.5 macOS builds are ad-hoc signed rather than notarized with a paid Apple Developer ID. Clear the quarantine flag once after moving Nakroth.app into /Applications:',
         ],
         code: {
           label: 'macOS Terminal',
